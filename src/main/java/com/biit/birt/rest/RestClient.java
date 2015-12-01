@@ -11,7 +11,6 @@ import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 
 import com.biit.birt.configuration.BirtConfigurationReader;
-import com.biit.logger.BiitCommonLogger;
 
 public class RestClient {
 
@@ -26,7 +25,6 @@ public class RestClient {
 	private static String get(String target, String path, String requestType, String json) {
 		boolean ssl = target.startsWith("https");
 		String responseString = null;
-		BiitCommonLogger.debug(RestClient.class, "Calling rest service '" + target + "/" + path + "'");
 
 		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(BirtConfigurationReader
 				.getInstance().getWebServiceUser(), BirtConfigurationReader.getInstance().getWebServicePass());
@@ -44,7 +42,6 @@ public class RestClient {
 		if (response.getStatusInfo().toString().equals(Response.Status.OK.toString())) {
 			responseString = response.readEntity(String.class);
 		}
-		BiitCommonLogger.debug(RestClient.class, "Service returns " + responseString);
 		return responseString;
 	}
 }

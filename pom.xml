@@ -11,12 +11,12 @@
 		<repository>
 			<id>central</id>
 			<name>biit-releases</name>
-			<url>https://dev.biit-solutions.com:8443/mavenartifactory/ext-release-local</url>
+			<url>https://git.biit-solutions.com:8443/mavenartifactory/ext-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>libs-snapshot</name>
-			<url>https://dev.biit-solutions.com:8443/mavenartifactory/libs-snapshot</url>
+			<url>https://git.biit-solutions.com:8443/mavenartifactory/libs-snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
 

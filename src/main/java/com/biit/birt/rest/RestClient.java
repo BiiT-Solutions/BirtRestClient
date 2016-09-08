@@ -67,17 +67,13 @@ public class RestClient {
 					.request(requestType).post(Entity.entity(json, MediaType.APPLICATION_JSON));
 		}
 		if (response.getStatusInfo().toString().equals(Response.Status.OK.toString())) {
-			// final StreamingOutput result =
-			// response.readEntity(StreamingOutput.class);
 			InputStream result = response.readEntity(InputStream.class);
-			byte[] bytes;
 			try {
-				bytes = toByteArray(result);
+				byte[] bytes = toByteArray(result);
 				return bytes;
 			} catch (IOException e) {
 				BiitCommonLogger.errorMessageNotification(RestClient.class, e);
 			}
-
 		}
 		return null;
 	}
@@ -103,16 +99,14 @@ public class RestClient {
 		return responseString;
 	}
 
-	private static byte[] toByteArray(InputStream is) throws IOException {
+	private static byte[] toByteArray(InputStream inputStream) throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		int reads = is.read();
+		int read = 0;
+		byte[] bytes = new byte[1024];
 
-		while (reads != -1) {
-			baos.write(reads);
-			reads = is.read();
+		while ((read = inputStream.read(bytes)) != -1) {
+			baos.write(bytes, 0, read);
 		}
-
 		return baos.toByteArray();
-
 	}
 }

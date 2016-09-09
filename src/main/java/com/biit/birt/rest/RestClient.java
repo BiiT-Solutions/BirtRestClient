@@ -27,8 +27,12 @@ public class RestClient {
 		return post(targetPath, path, MediaType.APPLICATION_XML, json);
 	}
 
-	public static byte[] callRestServiceImage(String targetPath, String path, String json) {
+	public static byte[] callRestServiceGetJpgImage(String targetPath, String path, String json) {
 		return postForImage(targetPath, path, "image/jpg", json);
+	}
+	
+	public static byte[] callRestServiceGetPngImage(String targetPath, String path, String json) {
+		return postForImage(targetPath, path, "image/png", json);
 	}
 
 	private static String post(String target, String path, String requestType, String json) {

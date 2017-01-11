@@ -27,7 +27,7 @@ public class RestClient {
 		return post(targetPath, path, MediaType.APPLICATION_XML, json);
 	}
 
-	public static String callRestServiceString(String targetPath, String path, String json) {
+	public static String callRestServiceText(String targetPath, String path, String json) {
 		return post(targetPath, path, MediaType.TEXT_PLAIN, json);
 	}
 

@@ -56,6 +56,8 @@ public class RestClient {
 		}
 		if (response.getStatusInfo().toString().equals(Response.Status.OK.toString())) {
 			responseString = response.readEntity(String.class);
+		} else {
+			responseString = response.getStatusInfo().toString();
 		}
 		return responseString;
 	}

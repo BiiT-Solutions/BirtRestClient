@@ -25,7 +25,7 @@
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
 		<jersey-client.version>2.17</jersey-client.version>
-		<biit-commons.version>[1.0,1.1)</biit-commons.version>
+		<liferay-configuration-reader.version>[1.0,2.0)</liferay-configuration-reader.version>
 	</properties>
 
 	<dependencies>
@@ -35,9 +35,9 @@
 			<version>${jersey-client.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.biit</groupId>
-			<artifactId>common-utils</artifactId>
-			<version>${biit-commons.version}</version>
+			<groupId>com.biit.liferay</groupId>
+			<artifactId>liferay-configuration-reader</artifactId>
+			<version>${liferay-configuration-reader.version}</version>
 		</dependency>
 	</dependencies>
 

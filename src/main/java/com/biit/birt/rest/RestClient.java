@@ -11,10 +11,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
+import com.biit.liferay.configuration.LiferayConfigurationReader;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 
-import com.biit.birt.configuration.BirtConfigurationReader;
 import com.biit.logger.BiitCommonLogger;
 
 public class RestClient {
@@ -43,8 +43,8 @@ public class RestClient {
 		boolean ssl = target.startsWith("https");
 		String responseString = null;
 
-		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(BirtConfigurationReader.getInstance().getWebServiceUser(),
-				BirtConfigurationReader.getInstance().getWebServicePass());
+		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(LiferayConfigurationReader.getInstance().getUser(),
+				LiferayConfigurationReader.getInstance().getPassword());
 		Response response = null;
 		if (ssl) {
 			SSLContext sslContext = SslConfigurator.newInstance(true).createSSLContext();
@@ -65,8 +65,8 @@ public class RestClient {
 	private static byte[] postForImage(String target, String path, String requestType, String json) {
 		boolean ssl = target.startsWith("https");
 
-		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(BirtConfigurationReader.getInstance().getWebServiceUser(),
-				BirtConfigurationReader.getInstance().getWebServicePass());
+		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(LiferayConfigurationReader.getInstance().getUser(),
+				LiferayConfigurationReader.getInstance().getPassword());
 		Response response = null;
 		if (ssl) {
 			SSLContext sslContext = SslConfigurator.newInstance(true).createSSLContext();
@@ -92,8 +92,8 @@ public class RestClient {
 		boolean ssl = target.startsWith("https");
 		String responseString = null;
 
-		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(BirtConfigurationReader.getInstance().getWebServiceUser(),
-				BirtConfigurationReader.getInstance().getWebServicePass());
+		HttpAuthenticationFeature authenticationFeature = HttpAuthenticationFeature.basic(LiferayConfigurationReader.getInstance().getUser(),
+				LiferayConfigurationReader.getInstance().getPassword());
 		Response response = null;
 		if (ssl) {
 			SSLContext sslContext = SslConfigurator.newInstance(true).createSSLContext();

@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.biit</groupId>
     <artifactId>birt-rest-client</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Birt Rest Client</name>
     <description>Connecting to birt system.</description>
 
@@ -44,7 +44,7 @@
         <connection>scm:git:ssh://git@github.com/BiiT-Solutions/BirtRestClient.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/BiiT-Solutions/BirtRestClient.git</developerConnection>
         <url>https://github.com/BiiT-Solutions/BirtRestClient.git</url>
-        <tag>birt-rest-client-1.0.0</tag>
+        <tag>birt-rest-client</tag>
     </scm>
 
     <properties>

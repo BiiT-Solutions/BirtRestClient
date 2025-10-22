@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.biit</groupId>
+    <groupId>com.biit-solutions</groupId>
     <artifactId>birt-rest-client</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <name>Birt Rest Client</name>
@@ -62,7 +62,7 @@
             <version>${jersey-client.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.biit.liferay</groupId>
+            <groupId>com.biit-solutions.liferay</groupId>
             <artifactId>liferay-configuration-reader</artifactId>
             <version>${liferay-configuration-reader.version}</version>
         </dependency>
